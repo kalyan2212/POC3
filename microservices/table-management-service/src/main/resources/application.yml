@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: table-management-service
+
+aws:
+  dynamodb:
+    table:
+      tables: tables
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      cloudwatch:
+        enabled: true
+        namespace: EdgeConvert/TableManagement
+
+logging:
+  level:
+    com.edgeconvert: DEBUG
+    software.amazon.awssdk: INFO
