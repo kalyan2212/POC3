@@ -1,0 +1,24 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ddl-generation-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      cloudwatch:
+        enabled: true
+        namespace: EdgeConvert/DdlGeneration
+
+logging:
+  level:
+    com.edgeconvert: DEBUG
